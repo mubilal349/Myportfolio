@@ -6,53 +6,48 @@ import { ExternalLink, Github } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack marketplace with real-time inventory, payment processing, and admin dashboard. Built with MERN stack and Stripe integration.",
-      tech: ["React", "Node.js", "MongoDB", "Express", "Stripe", "Redux"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
+      title: "E-Commerce Website",
+      description:
+        "Full-stack marketplace with real-time inventory, payment processing, and admin dashboard. Built with MERN stack and Stripe integration.",
+      tech: [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Debit/Credit card",
+        "Redux",
+      ],
+      image: "../Images/ecommerce.png",
       demo: "#",
-      github: "#"
+      github: "https://github.com/mubilal349/Islampur_Bazaar",
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics platform for social media management with real-time data visualization and automated reporting features.",
-      tech: ["React", "Chart.js", "Node.js", "MongoDB", "Socket.io"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+      title: "Blog website",
+      description:
+        "Analytics platform for social media management with real-time data visualization and automated reporting features.",
+      tech: ["React", "Tailwind css"],
+      image: "../Images/blog.png",
       demo: "#",
-      github: "#"
+      github: "https://github.com/mubilal349/MyBlog",
     },
     {
-      title: "Task Management System",
-      description: "Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features.",
-      tech: ["React", "Express", "MongoDB", "WebSockets", "JWT"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
+      title: "Banist Website Design",
+      description:
+        "Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features.",
+      tech: ["Html", "Css", "Js"],
+      image: "../Images/Bankist website.png",
       demo: "#",
-      github: "#"
+      github: "https://github.com/mubilal349/Bankist-website-design",
     },
     {
-      title: "Real-time Chat Application",
-      description: "Instant messaging platform with video calls, file sharing, and end-to-end encryption for secure communication.",
-      tech: ["React", "Socket.io", "Node.js", "MongoDB", "WebRTC"],
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800&h=400&fit=crop",
+      title: "Pig Game",
+      description:
+        "Instant messaging platform with video calls, file sharing, and end-to-end encryption for secure communication.",
+      tech: ["Html", "Css", "Js"],
+      image: "../Images/pig game.png",
       demo: "#",
-      github: "#"
+      github: "https://github.com/mubilal349/Pig-Game",
     },
-    {
-      title: "Blog CMS Platform",
-      description: "Content management system with markdown editor, SEO optimization, and multi-author support.",
-      tech: ["React", "Express", "MongoDB", "Markdown", "SEO"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
-      demo: "#",
-      github: "#"
-    },
-    {
-      title: "Fitness Tracking App",
-      description: "Personal fitness tracker with workout plans, progress analytics, and nutrition monitoring.",
-      tech: ["React Native", "Node.js", "MongoDB", "Charts", "REST API"],
-      image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&h=400&fit=crop",
-      demo: "#",
-      github: "#"
-    }
   ];
 
   return (
@@ -67,13 +62,13 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card 
+            <Card
               key={index}
               className="overflow-hidden bg-card/50 backdrop-blur border-border/50 hover:shadow-card transition-all duration-300 hover:scale-[1.02] group"
             >
               <div className="h-48 overflow-hidden bg-gradient-dark">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 />
@@ -87,7 +82,7 @@ const Projects = () => {
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
-                    <Badge 
+                    <Badge
                       key={techIndex}
                       variant="outline"
                       className="text-xs border-primary/30"
@@ -97,18 +92,18 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button 
-                    variant="terminal" 
-                    size="sm" 
+                  <Button
+                    variant="terminal"
+                    size="sm"
                     className="flex-1"
                     onClick={() => window.open(project.demo, "_blank")}
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Demo
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className="flex-1"
                     onClick={() => window.open(project.github, "_blank")}
                   >

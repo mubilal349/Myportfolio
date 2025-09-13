@@ -3,22 +3,48 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
+  const roles = [
+    "Front-end Developer",
+    "Back-end Developer",
+    "MERN Stack Developer",
+  ];
+
   const [displayText, setDisplayText] = useState("");
-  const fullText = "MERN Stack Developer";
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 100);
+    const currentRole = roles[roleIndex];
+
+    const interval = setInterval(
+      () => {
+        if (!isDeleting) {
+          // Typing
+          if (charIndex < currentRole.length) {
+            setDisplayText(currentRole.slice(0, charIndex + 1));
+            setCharIndex((prev) => prev + 1);
+          } else {
+            // Pause before deleting
+            setTimeout(() => setIsDeleting(true), 1000);
+          }
+        } else {
+          // Deleting
+          if (charIndex > 0) {
+            setDisplayText(currentRole.slice(0, charIndex - 1));
+            setCharIndex((prev) => prev - 1);
+          } else {
+            // Move to next role
+            setIsDeleting(false);
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+          }
+        }
+      },
+      isDeleting ? 50 : 100
+    ); // faster delete
 
     return () => clearInterval(interval);
-  }, []);
+  }, [charIndex, isDeleting, roleIndex, roles]);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

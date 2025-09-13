@@ -1,33 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "john.developer@example.com",
-      href: "mailto:john.developer@example.com"
+      value: "mubilal349@example.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+92 3311068668",
+      href: "tel:+923311068668",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
-      href: "#"
-    }
+      value: "Rawalpindi, Punjab",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" }
+    { icon: Github, href: "https://github.com/mubilal349", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/mubilall?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      label: "LinkedIn",
+    },
   ];
 
   return (
@@ -37,22 +39,25 @@ const Contact = () => {
           Let's Connect
         </h2>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+          Have a project in mind? I'd love to hear about it. Let's create
+          something amazing together.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
             return (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 bg-card/50 backdrop-blur border-border/50 hover:shadow-glow transition-all duration-300 text-center"
               >
                 <div className="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-1 text-foreground">{info.label}</h3>
-                <a 
+                <h3 className="font-semibold mb-1 text-foreground">
+                  {info.label}
+                </h3>
+                <a
                   href={info.href}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -67,7 +72,10 @@ const Contact = () => {
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2 text-foreground"
+                >
                   Name
                 </label>
                 <input
@@ -78,7 +86,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2 text-foreground"
+                >
                   Email
                 </label>
                 <input
@@ -90,7 +101,10 @@ const Contact = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium mb-2 text-foreground">
+              <label
+                htmlFor="subject"
+                className="block text-sm font-medium mb-2 text-foreground"
+              >
                 Subject
               </label>
               <input
@@ -101,7 +115,10 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium mb-2 text-foreground"
+              >
                 Message
               </label>
               <textarea
