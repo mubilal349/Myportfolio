@@ -18,7 +18,7 @@ const Projects = () => {
         "Redux",
       ],
       image: "../Images/ecommerce.png",
-      demo: "#",
+      demo: "https://splendid-biscuit-4dc539.netlify.app", // 🔗 live demo link
       github: "https://github.com/mubilal349/Islampur_Bazaar",
     },
     {
@@ -27,16 +27,16 @@ const Projects = () => {
         "Analytics platform for social media management with real-time data visualization and automated reporting features.",
       tech: ["React", "Tailwind css"],
       image: "../Images/blog.png",
-      demo: "#",
+      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
       github: "https://github.com/mubilal349/MyBlog",
     },
     {
-      title: "Banist Website Design",
+      title: "Bankist Website Design",
       description:
         "Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features.",
       tech: ["Html", "Css", "Js"],
       image: "../Images/Bankist website.png",
-      demo: "#",
+      demo: "https://bankist-website-design.vercel.app", // 🔗 example link
       github: "https://github.com/mubilal349/Bankist-website-design",
     },
     {
@@ -45,8 +45,51 @@ const Projects = () => {
         "Instant messaging platform with video calls, file sharing, and end-to-end encryption for secure communication.",
       tech: ["Html", "Css", "Js"],
       image: "../Images/pig game.png",
-      demo: "#",
+      demo: "https://pig-game-ten-ashy.vercel.app", // 🔗 example link
       github: "https://github.com/mubilal349/Pig-Game",
+    },
+    {
+      title: "SteerLine",
+      description:
+        "Steerline’s e-commerce features include a dynamic product catalog with advanced filtering options, allowing users to easily find what they need..",
+      tech: ["React", "Css", "Context api"],
+      image: "../Images/steerline.png",
+      demo: "https://celebrated-bombolone-f0b41d.netlify.app/", // 🔗 example link
+      github: "https://github.com/mubilal349/my-app",
+    },
+    {
+      title: "Nextjs Chatbot",
+      description: "Chat bot that can give you the answer form openai api key",
+      tech: ["Next js", "Openai API key integration", "Javascript", "Css"],
+      image: "../Images/nextjschatbot.png",
+      demo: "https://nextjs-chatbot-ynq1.vercel.app/", // 🔗 example link
+      github: "https://github.com/mubilal349/Nextjs_chatbot",
+    },
+    {
+      title: "BestMedex",
+      description: "Medical Billing website build on wordpress Elementor",
+      tech: [
+        "Wordpress",
+        "ChatBot integration",
+        "Elementor",
+        "Custom theme developement",
+      ],
+      image: "../Images/Bestmedex-project.png",
+      demo: "https://bestmedex.com/",
+      github: "https://bestmedex.com/",
+    },
+    {
+      title: "InsureAmeri",
+      description: "Medical related website using custom coding",
+      tech: [
+        "Wordpress custom-theme",
+        "Custom Coding",
+        "Elementor",
+        "Custom theme developement",
+      ],
+      image: "../Images/insureameri-project-image.png",
+      demo: "https://insureameri.com/",
+      github: "https://github.com/mubilal349/insureAmeri",
     },
   ];
 

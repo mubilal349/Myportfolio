@@ -7,6 +7,8 @@ const Hero = () => {
     "Front-end Developer",
     "Back-end Developer",
     "MERN Stack Developer",
+    "Wordpress Developer",
+    "AI Automation Developer",
   ];
 
   const [displayText, setDisplayText] = useState("");
@@ -59,9 +61,11 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-lg md:text-xl text-primary font-mono mb-4 animate-fade-in">
-          Hello, I'm
-        </h2>
+        <div className="w-full text-left px-12">
+          <h2 className="text-lg md:text-xl text-primary font-mono mb-4 animate-fade-in">
+            Hello, I'm
+          </h2>
+        </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent animate-slide-up">
           Muhammad Bilal
@@ -78,8 +82,8 @@ const Hero = () => {
 
         <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-2xl mx-auto animate-fade-in">
           Building scalable full-stack applications with MongoDB, Express.js,
-          React, and Node.js. Passionate about creating efficient, user-centric
-          solutions.
+          React, Next js , and Node.js. Passionate about creating efficient,
+          user-centric solutions.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fade-in">

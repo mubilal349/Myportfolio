@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BackToTop from "./components/common/BackToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,11 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <BackToTop />
+      <WhatsAppButton
+        phoneNumber="923311068668"
+        message="Hi! I’d like to learn more about you."
+        position="right"
+      />
     </TooltipProvider>
   </QueryClientProvider>
 );

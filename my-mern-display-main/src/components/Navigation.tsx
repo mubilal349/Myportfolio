@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,19 +17,36 @@ const Navigation = () => {
 
   const navItems = [
     { label: "Home", href: "#" },
+    { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
-    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
+    {
+      label: "Resume",
+      href: "../Images/Muhammad-Bilal-MERN (1) (2).pdf", // resume file inside public/
+      icon: <FileText className="w-4 h-4" />,
+      download: true,
+    },
   ];
 
-  const scrollToSection = (href: string) => {
-    if (href === "#") {
+  const handleNavClick = (item: any) => {
+    if (item.download) {
+      // open in new tab and download
+      const link = document.createElement("a");
+      link.href = item.href;
+      link.download = "Muhammad-Bilal-Resume.pdf";
+      link.click();
+      return;
+    }
+
+    if (item.href === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const element = document.querySelector(href);
+      const element = document.querySelector(item.href);
       element?.scrollIntoView({ behavior: "smooth" });
     }
+
     setIsMobileMenuOpen(false);
   };
 
@@ -43,6 +60,7 @@ const Navigation = () => {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <div className="flex items-center">
             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent font-mono">
               &lt;MBilal /&gt;
@@ -55,10 +73,11 @@ const Navigation = () => {
               <Button
                 key={index}
                 variant="ghost"
-                onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => handleNavClick(item)}
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               >
-                {item.label}
+                {item.icon && item.icon}
+                <span>{item.label}</span>
               </Button>
             ))}
           </div>
@@ -79,14 +98,15 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className="md:hidden py-4 border-t border-border/50 flex flex-col items-center">
             {navItems.map((item, index) => (
               <button
                 key={index}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-2 px-4 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"
+                onClick={() => handleNavClick(item)}
+                className="flex items-center justify-center gap-2 w-full py-2 px-4 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-md transition-colors"
               >
-                {item.label}
+                {item.icon && item.icon}
+                <span>{item.label}</span>
               </button>
             ))}
           </div>
