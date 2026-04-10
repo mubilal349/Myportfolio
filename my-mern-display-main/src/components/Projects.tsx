@@ -54,7 +54,7 @@ const Projects = () => {
         "Steerline’s e-commerce features include a dynamic product catalog with advanced filtering options, allowing users to easily find what they need..",
       tech: ["React", "Css", "Context api"],
       image: "../Images/steerline.png",
-      demo: "https://celebrated-bombolone-f0b41d.netlify.app/", // 🔗 example link
+      demo: "https://steerline.co.uk", // 🔗 example link
       github: "https://github.com/mubilal349/my-app",
     },
     {

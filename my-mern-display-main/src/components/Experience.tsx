@@ -72,6 +72,31 @@ const Experience = () => {
       icon: Code,
     },
     {
+      id: 3,
+      company: "All Medex",
+      position: "Full Stack Developer + Wordpress Developer",
+      location: "Austin, TX",
+      duration: "Jan 2026 - Present",
+      type: "On-site",
+      description:
+        "Worked with multiple websites to build and maintain websites using wordpress and custom coding.",
+      achievements: [
+        "Delivered 3 MVP applications within tight deadlines",
+        "Implemented real-time features using Socket.io",
+        "Built secure authentication and authorization systems",
+        "Optimized database queries for better performance",
+      ],
+      technologies: [
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "Socket.io",
+        "JWT",
+      ],
+      icon: Rocket,
+    },
+    {
       id: 4,
       company: "Kamyab Jawan Markaz,Swat",
       position: "Junior Web Developer",
@@ -88,31 +113,6 @@ const Experience = () => {
       ],
       technologies: ["HTML", "CSS", "JavaScript", "React", "Git", "Figma"],
       icon: Users2,
-    },
-    {
-      id: 3,
-      company: "StartupHub",
-      position: "MERN Stack Developer",
-      location: "Austin, TX",
-      duration: "Jan 2023 - May 2023",
-      type: "Freelance",
-      description:
-        "Worked with multiple startups to build MVP applications and proof-of-concepts using MERN stack technologies.",
-      achievements: [
-        "Delivered 3 MVP applications within tight deadlines",
-        "Implemented real-time features using Socket.io",
-        "Built secure authentication and authorization systems",
-        "Optimized database queries for better performance",
-      ],
-      technologies: [
-        "MongoDB",
-        "Express.js",
-        "React",
-        "Node.js",
-        "Socket.io",
-        "JWT",
-      ],
-      icon: Rocket,
     },
   ];
 
