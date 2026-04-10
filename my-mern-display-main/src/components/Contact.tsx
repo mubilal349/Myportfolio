@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
   const contactInfo = [
@@ -32,6 +33,47 @@ const Contact = () => {
       label: "LinkedIn",
     },
   ];
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://hook.eu1.make.com/ivclweg36ph1uco8to1ntq2oydbninys",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error occurred!");
+    }
+  };
 
   return (
     <section id="contact" className="py-20 px-4 bg-card/30">
@@ -70,7 +112,7 @@ const Contact = () => {
         </div>
 
         <Card className="p-8 bg-card/50 backdrop-blur border-border/50 mb-8">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label
@@ -82,8 +124,10 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  onChange={handleChange}
                   className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                   placeholder="Your Name"
+                  required
                 />
               </div>
               <div>
@@ -96,24 +140,44 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  onChange={handleChange}
                   className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                   placeholder="your@email.com"
+                  required
                 />
               </div>
-            </div>
-            <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium mb-2 text-foreground"
-              >
-                Subject
-              </label>
-              <input
-                type="text"
-                id="subject"
-                className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
-                placeholder="Project Discussion"
-              />
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2 text-foreground"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="Phone"
+                  id="Phone"
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
+                  placeholder="your Phone Number"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium mb-2 text-foreground"
+                >
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
+                  placeholder="Project Discussion"
+                  required
+                />
+              </div>
             </div>
             <div>
               <label
@@ -124,6 +188,7 @@ const Contact = () => {
               </label>
               <textarea
                 id="message"
+                onChange={handleChange}
                 rows={5}
                 className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground resize-none"
                 placeholder="Tell me about your project..."
