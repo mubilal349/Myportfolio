@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import BackToTop from "./components/common/BackToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CalendlyBooking from "./components/CalendlyBooking";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <CalendlyBooking />
       <BackToTop />
       <WhatsAppButton
         phoneNumber="923311068668"

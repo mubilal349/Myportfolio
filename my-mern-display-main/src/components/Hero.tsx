@@ -42,7 +42,7 @@ const Hero = () => {
           }
         }
       },
-      isDeleting ? 50 : 100
+      isDeleting ? 50 : 100,
     ); // faster delete
 
     return () => clearInterval(interval);
