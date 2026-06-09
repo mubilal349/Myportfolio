@@ -58,7 +58,7 @@ const Experience = () => {
       company: "RCMBS LLC",
       position: "Web Developer",
       location: "Rawalpindi, Punjab",
-      duration: "December 2025 - Present",
+      duration: "December 2025 - Jan 2026",
       type: "Full-time",
       description:
         "Developed and maintained the wordpress websites along with google sheets integration",
@@ -73,10 +73,10 @@ const Experience = () => {
     },
     {
       id: 3,
-      company: "All Medex",
+      company: "All Medex LLC",
       position: "Full Stack Developer + Wordpress Developer",
-      location: "Austin, TX",
-      duration: "Jan 2026 - Present",
+      location: "Rawalpindi, Pakistan",
+      duration: "Jan 2026 - Apr 2026",
       type: "On-site",
       description:
         "Worked with multiple websites to build and maintain websites using wordpress and custom coding.",

@@ -26,7 +26,31 @@ const Projects = () => {
       description:
         "Analytics platform for social media management with real-time data visualization and automated reporting features.",
       tech: ["React", "Tailwind css"],
-      image: "../Images/blog.png",
+      image: "../Images/Blog.png",
+      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
+      github: "https://github.com/mubilal349/MyBlog",
+    },
+    {
+      title: "Messaging Web App",
+      description:
+        "Built a real-time messaging web application using Laravel Reverb and WebRTC, featuring instant messaging, online/offline status indicators, real-time notifications, and secure peer-to-peer communication.",
+      tech: [
+        "Laravel",
+        "LaravelReverb",
+        "WebRTC",
+        "Blade Component",
+        "Tailwind css",
+      ],
+      image: "../Images/messaging-web-app.png",
+      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
+      github: "https://github.com/mubilal349/MyBlog",
+    },
+    {
+      title: " Bit Blog Web App",
+      description:
+        "Bit Blog is a modern platform to share articles and insights. Stay updated with the latest posts and explore new topics daily.",
+      tech: ["Laravel", "PHP", "Admin Panel", "Basic Auth", "Tailwind css"],
+      image: "../Images/Bit Blog.png",
       demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
       github: "https://github.com/mubilal349/MyBlog",
     },
