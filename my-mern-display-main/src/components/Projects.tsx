@@ -115,6 +115,58 @@ const Projects = () => {
       demo: "https://insureameri.com/",
       github: "https://github.com/mubilal349/insureAmeri",
     },
+    {
+      title: "Live weather Dashboard",
+      description: "Displaying the weather of the city",
+      tech: ["HTML", "CSS", "Js and integrated the API", "OpenWeather API"],
+      image: "../Images/valid-search-desktop.png",
+      demo: "https://soft-churros-5198f6.netlify.app/",
+      github: "https://github.com/mubilal349/Live-pakistan-task-02",
+    },
+    {
+      title: "Support AI",
+      description: "questions answered locally",
+      tech: ["Typescript", "Next.js", "Express.js and MongoDB", "REST APIs"],
+      image: "../Images/support-ai.png",
+      demo: "https://soft-churros-5198f6.netlify.app/",
+      github: "https://github.com/mubilal349/support-ai",
+    },
+    {
+      title: "Quartz website",
+      description:
+        "Construction related website that are doing the shop and cart functionality",
+      tech: ["HTML", "CSS", "Javascript", "Json that are showing 200 products"],
+      image: "../Images/quartz.png",
+      demo: "https://soft-churros-5198f6.netlify.app/",
+      github: "https://github.com/mubilal349/support-ai",
+    },
+    {
+      title: "Marketing Agency website",
+      description: "Marketing Agency related Website",
+      tech: ["HTML", "CSS", "Javascript"],
+      image: "../Images/marketing.png",
+      demo: "https://soft-churros-5198f6.netlify.app/",
+      github: "https://github.com/mubilal349/support-ai",
+    },
+    {
+      title: "InvoiceFlow",
+      description:
+        "Full-stack invoice and business management system with invoice creation, customer management, expense tracking, PDF generation, analytics, authentication, and role-based access control.",
+      tech: [
+        "React",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "REST API",
+        "Axios",
+        "CSS",
+      ],
+      image: "../Images/invoice-flow-li.png",
+      demo: "https://cerulean-wisp-572a51.netlify.app/",
+      github: "https://github.com/mubilal349/InvoiceFlow",
+    },
   ];
 
   return (

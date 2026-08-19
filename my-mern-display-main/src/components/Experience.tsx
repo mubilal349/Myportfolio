@@ -55,7 +55,7 @@ const Experience = () => {
     },
     {
       id: 2,
-      company: "RCMBS LLC",
+      company: "RCMB LLC",
       position: "Web Developer",
       location: "Rawalpindi, Punjab",
       duration: "December 2025 - Jan 2026",

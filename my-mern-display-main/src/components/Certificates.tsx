@@ -66,6 +66,7 @@ const Certificates = () => {
     "Open Source Contributor",
     "LeetCode 300+ Problems",
     "GitHub Star Projects",
+    "Live Pakistan Front End Web Development Internship",
   ];
 
   return (
