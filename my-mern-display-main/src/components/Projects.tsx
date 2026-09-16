@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -14,140 +15,168 @@ const Projects = () => {
         "Node.js",
         "MongoDB",
         "Express",
-        "Debit/Credit card",
+        "Debit/Credit Card",
         "Redux",
       ],
-      image: "../Images/ecommerce.png",
-      demo: "https://splendid-biscuit-4dc539.netlify.app", // 🔗 live demo link
+      image: ["../Images/ecommerce.png"],
+      demo: "https://splendid-biscuit-4dc539.netlify.app",
       github: "https://github.com/mubilal349/Islampur_Bazaar",
     },
+
     {
-      title: "Blog website",
+      title: "Blog Website",
       description:
-        "Analytics platform for social media management with real-time data visualization and automated reporting features.",
-      tech: ["React", "Tailwind css"],
-      image: "../Images/Blog.png",
-      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
+        "Modern blogging platform with content management, responsive design, and an intuitive interface for publishing and exploring articles.",
+      tech: ["React", "Tailwind CSS"],
+      image: ["../Images/MyBlog-1.png", "../Images/MyBlog-2.png"],
+      demo: "https://extraordinary-arithmetic-40c28f.netlify.app/",
       github: "https://github.com/mubilal349/MyBlog",
     },
+
     {
       title: "Messaging Web App",
       description:
         "Built a real-time messaging web application using Laravel Reverb and WebRTC, featuring instant messaging, online/offline status indicators, real-time notifications, and secure peer-to-peer communication.",
       tech: [
         "Laravel",
-        "LaravelReverb",
+        "Laravel Reverb",
         "WebRTC",
-        "Blade Component",
-        "Tailwind css",
+        "Blade Components",
+        "Tailwind CSS",
       ],
-      image: "../Images/messaging-web-app.png",
-      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
-      github: "https://github.com/mubilal349/MyBlog",
+      image: ["../Images/messaging-web-app.png"],
+      demo: "https://my-blog-alpha-rouge.vercel.app",
+      github: "https://github.com/mubilal349/Real-Chat-App",
     },
+
     {
-      title: " Bit Blog Web App",
+      title: "Bit Blog Web App",
       description:
-        "Bit Blog is a modern platform to share articles and insights. Stay updated with the latest posts and explore new topics daily.",
-      tech: ["Laravel", "PHP", "Admin Panel", "Basic Auth", "Tailwind css"],
-      image: "../Images/Bit Blog.png",
-      demo: "https://my-blog-alpha-rouge.vercel.app", // 🔗 your blog live demo
+        "Bit Blog is a modern platform for sharing articles and insights. Stay updated with the latest posts and explore new topics daily.",
+      tech: ["Laravel", "PHP", "Admin Panel", "Basic Auth", "Tailwind CSS"],
+      image: ["../Images/Bit Blog.png"],
+      demo: "https://my-blog-alpha-rouge.vercel.app",
       github: "https://github.com/mubilal349/MyBlog",
     },
+
     {
       title: "Bankist Website Design",
       description:
-        "Collaborative project management tool with real-time updates, drag-and-drop interface, and team collaboration features.",
-      tech: ["Html", "Css", "Js"],
-      image: "../Images/Bankist website.png",
-      demo: "https://bankist-website-design.vercel.app", // 🔗 example link
+        "Modern banking website interface built with HTML, CSS, and JavaScript featuring interactive sections and smooth user interactions.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: ["../Images/Bankist website.png"],
+      demo: "https://bankist-website-design.vercel.app",
       github: "https://github.com/mubilal349/Bankist-website-design",
     },
+
     {
       title: "Pig Game",
       description:
-        "Instant messaging platform with video calls, file sharing, and end-to-end encryption for secure communication.",
-      tech: ["Html", "Css", "Js"],
-      image: "../Images/pig game.png",
-      demo: "https://pig-game-ten-ashy.vercel.app", // 🔗 example link
+        "Interactive two-player dice game built with HTML, CSS, and JavaScript where players roll the dice and compete to reach the winning score.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: ["../Images/pig game.png"],
+      demo: "https://pig-game-ten-ashy.vercel.app",
       github: "https://github.com/mubilal349/Pig-Game",
     },
+
     {
       title: "SteerLine",
       description:
-        "Steerline’s e-commerce features include a dynamic product catalog with advanced filtering options, allowing users to easily find what they need..",
-      tech: ["React", "Css", "Context api"],
-      image: "../Images/steerline.png",
-      demo: "https://steerline.co.uk", // 🔗 example link
+        "E-commerce website featuring a dynamic product catalog with filtering options, shopping functionality, and a responsive user interface.",
+      tech: ["React", "CSS", "Context API"],
+      image: ["../Images/steerline.png"],
+      demo: "https://steerline.co.uk",
       github: "https://github.com/mubilal349/my-app",
     },
+
     {
-      title: "Nextjs Chatbot",
-      description: "Chat bot that can give you the answer form openai api key",
-      tech: ["Next js", "Openai API key integration", "Javascript", "Css"],
-      image: "../Images/nextjschatbot.png",
-      demo: "https://nextjs-chatbot-ynq1.vercel.app/", // 🔗 example link
+      title: "Next.js Chatbot",
+      description:
+        "AI-powered chatbot built with Next.js and OpenAI API integration that provides conversational responses to user questions.",
+      tech: ["Next.js", "OpenAI API", "JavaScript", "CSS"],
+      image: ["../Images/nextjschatbot.png"],
+      demo: "https://nextjs-chatbot-ynq1.vercel.app/",
       github: "https://github.com/mubilal349/Nextjs_chatbot",
     },
+
     {
       title: "BestMedex",
-      description: "Medical Billing website build on wordpress Elementor",
+      description:
+        "Medical billing website built with WordPress and Elementor featuring custom theme development and chatbot integration.",
       tech: [
-        "Wordpress",
-        "ChatBot integration",
+        "WordPress",
+        "Chatbot Integration",
         "Elementor",
-        "Custom theme developement",
+        "Custom Theme Development",
       ],
-      image: "../Images/Bestmedex-project.png",
+      image: ["../Images/Bestmedex-project.png"],
       demo: "https://bestmedex.com/",
       github: "https://bestmedex.com/",
     },
+
     {
       title: "InsureAmeri",
-      description: "Medical related website using custom coding",
-      tech: [
-        "Wordpress custom-theme",
-        "Custom Coding",
-        "Elementor",
-        "Custom theme developement",
-      ],
-      image: "../Images/insureameri-project-image.png",
+      description:
+        "Medical-related website developed using WordPress with a custom theme, Elementor, and custom coding.",
+      tech: ["WordPress", "Custom Theme", "Custom Coding", "Elementor"],
+      image: ["../Images/insureameri-project-image.png"],
       demo: "https://insureameri.com/",
       github: "https://github.com/mubilal349/insureAmeri",
     },
+
     {
-      title: "Live weather Dashboard",
-      description: "Displaying the weather of the city",
-      tech: ["HTML", "CSS", "Js and integrated the API", "OpenWeather API"],
-      image: "../Images/valid-search-desktop.png",
+      title: "Live Weather Dashboard",
+      description:
+        "Weather dashboard that allows users to search for a city and view current weather information using a weather API.",
+      tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+      image: ["../Images/valid-search-desktop.png"],
       demo: "https://soft-churros-5198f6.netlify.app/",
       github: "https://github.com/mubilal349/Live-pakistan-task-02",
     },
+
     {
-      title: "Support AI",
-      description: "questions answered locally",
-      tech: ["Typescript", "Next.js", "Express.js and MongoDB", "REST APIs"],
-      image: "../Images/support-ai.png",
-      demo: "https://soft-churros-5198f6.netlify.app/",
-      github: "https://github.com/mubilal349/support-ai",
-    },
-    {
-      title: "Quartz website",
+      title: "SupportAI",
       description:
-        "Construction related website that are doing the shop and cart functionality",
-      tech: ["HTML", "CSS", "Javascript", "Json that are showing 200 products"],
-      image: "../Images/quartz.png",
+        "AI-powered customer support SaaS platform with ticket management, AI assistance, real-time communication, notifications, SLA tracking, and role-based access.",
+      tech: [
+        "JavaScript",
+        "React.js",
+        "Express.js",
+        "MongoDB",
+        "REST APIs",
+        "Socket.IO",
+        "AI",
+      ],
+      image: [
+        "../Images/support_ai.png",
+        "../Images/support_ai2.png",
+        "../Images/support_ai3.png",
+        "../Images/support_ai4.png",
+      ],
       demo: "https://soft-churros-5198f6.netlify.app/",
       github: "https://github.com/mubilal349/support-ai",
     },
+
     {
-      title: "Marketing Agency website",
-      description: "Marketing Agency related Website",
-      tech: ["HTML", "CSS", "Javascript"],
-      image: "../Images/marketing.png",
+      title: "Quartz Website",
+      description:
+        "Construction-related e-commerce website featuring a dynamic product catalog, shopping functionality, filtering, and dynamically rendered products.",
+      tech: ["HTML", "CSS", "JavaScript", "JSON"],
+      image: ["../Images/quartz.png"],
       demo: "https://soft-churros-5198f6.netlify.app/",
       github: "https://github.com/mubilal349/support-ai",
     },
+
+    {
+      title: "Marketing Agency Website",
+      description:
+        "Marketing agency website showcasing landing page sections, services, business information, and a modern responsive interface.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: ["../Images/marketing.png"],
+      demo: "https://soft-churros-5198f6.netlify.app/",
+      github: "https://github.com/mubilal349/support-ai",
+    },
+
     {
       title: "InvoiceFlow",
       description:
@@ -163,9 +192,39 @@ const Projects = () => {
         "Axios",
         "CSS",
       ],
-      image: "../Images/invoice-flow-li.png",
+      image: [
+        "../Images/invoice-flow-li.png",
+        "../Images/invoice-flow-2.png",
+        "../Images/invoice-flow-3.png",
+        "../Images/invoice-flow-4.png",
+      ],
       demo: "https://cerulean-wisp-572a51.netlify.app/",
       github: "https://github.com/mubilal349/InvoiceFlow",
+    },
+
+    {
+      title: "SecureHub",
+      description:
+        "Full-stack user management and authentication platform with user creation, user tracking, authentication, and role-based access control.",
+      tech: [
+        "React",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "REST API",
+        "Axios",
+        "CSS",
+      ],
+      image: [
+        "../Images/securehub.png",
+        "../Images/securehub-2.png",
+        "../Images/securehub-3.png",
+        "../Images/securehub-4.png",
+      ],
+      demo: "https://cerulean-wisp-572a51.netlify.app/",
+      github: "https://github.com/mubilal349/SecureHub",
     },
   ];
 
@@ -175,67 +234,186 @@ const Projects = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
           Featured Projects
         </h2>
+
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Showcasing full-stack applications built with the MERN stack
+          Showcasing full-stack applications, web platforms, and modern projects
+          built with different technologies.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden bg-card/50 backdrop-blur border-border/50 hover:shadow-card transition-all duration-300 hover:scale-[1.02] group"
-            >
-              <div className="h-48 overflow-hidden bg-gradient-dark">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-foreground">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <Badge
-                      key={techIndex}
-                      variant="outline"
-                      className="text-xs border-primary/30"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  <Button
-                    variant="terminal"
-                    size="sm"
-                    className="flex-1"
-                    onClick={() => window.open(project.demo, "_blank")}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    Demo
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1"
-                    onClick={() => window.open(project.github, "_blank")}
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    Code
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+const ProjectCard = ({ project }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = Array.isArray(project.image) ? project.image : [project.image];
+
+  const hasMultipleImages = images.length > 1;
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <Card
+      className="overflow-hidden bg-card/50 backdrop-blur border-border/50
+                 hover:shadow-card transition-all duration-300
+                 hover:scale-[1.02] group"
+    >
+      {/* =====================================================
+          IMAGE CAROUSEL
+      ===================================================== */}
+
+      <div className="relative h-48 overflow-hidden bg-gradient-dark">
+        <img
+          src={images[currentImage]}
+          alt={`${project.title} screenshot ${currentImage + 1}`}
+          className="w-full h-full object-cover
+                     opacity-70 group-hover:opacity-100
+                     transition-all duration-500"
+        />
+
+        {/* Previous Button */}
+        {hasMultipleImages && (
+          <button
+            type="button"
+            onClick={previousImage}
+            aria-label="Previous project image"
+            className="absolute left-2 top-1/2 -translate-y-1/2
+                       w-9 h-9 rounded-full
+                       bg-black/50 backdrop-blur-sm
+                       text-white flex items-center justify-center
+                       opacity-0 group-hover:opacity-100
+                       transition-all duration-300
+                       hover:bg-black/80 hover:scale-110"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+        )}
+
+        {/* Next Button */}
+        {hasMultipleImages && (
+          <button
+            type="button"
+            onClick={nextImage}
+            aria-label="Next project image"
+            className="absolute right-2 top-1/2 -translate-y-1/2
+                       w-9 h-9 rounded-full
+                       bg-black/50 backdrop-blur-sm
+                       text-white flex items-center justify-center
+                       opacity-0 group-hover:opacity-100
+                       transition-all duration-300
+                       hover:bg-black/80 hover:scale-110"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        )}
+
+        {/* Image Counter */}
+        {hasMultipleImages && (
+          <div
+            className="absolute top-2 right-2
+                       px-2 py-1 rounded-md
+                       bg-black/60 backdrop-blur-sm
+                       text-white text-xs"
+          >
+            {currentImage + 1} / {images.length}
+          </div>
+        )}
+
+        {/* Carousel Dots */}
+        {hasMultipleImages && (
+          <div
+            className="absolute bottom-3 left-1/2
+                       -translate-x-1/2
+                       flex items-center gap-1.5"
+          >
+            {images.map((_, imageIndex) => (
+              <button
+                key={imageIndex}
+                type="button"
+                onClick={() => setCurrentImage(imageIndex)}
+                aria-label={`View image ${imageIndex + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentImage === imageIndex
+                    ? "w-5 bg-white"
+                    : "w-2 bg-white/50 hover:bg-white/80"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* =====================================================
+          PROJECT CONTENT
+      ===================================================== */}
+
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2 text-foreground">
+          {project.title}
+        </h3>
+
+        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tech.map((tech, techIndex) => (
+            <Badge
+              key={techIndex}
+              variant="outline"
+              className="text-xs border-primary/30"
+            >
+              {tech}
+            </Badge>
+          ))}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex gap-3">
+          <Button
+            variant="terminal"
+            size="sm"
+            className="flex-1"
+            onClick={() =>
+              window.open(project.demo, "_blank", "noopener,noreferrer")
+            }
+          >
+            <ExternalLink className="w-4 h-4 mr-1" />
+            Demo
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1"
+            onClick={() =>
+              window.open(project.github, "_blank", "noopener,noreferrer")
+            }
+          >
+            <Github className="w-4 h-4 mr-1" />
+            Code
+          </Button>
+        </div>
+      </div>
+    </Card>
   );
 };
 
