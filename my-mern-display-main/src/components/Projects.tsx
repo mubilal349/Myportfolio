@@ -261,6 +261,39 @@ const Projects = () => {
       demo: "https://candid-strudel-4b3548.netlify.app/",
       github: "https://github.com/mubilal349/Routemate",
     },
+
+    {
+      title: "FleetFlow",
+      status: "Coming Soon",
+      description:
+        "Modern fleet management platform designed to streamline vehicle operations, driver management, trip scheduling, vehicle assignments, inspections, maintenance tracking, and reporting. Built with a scalable microservices architecture, secure authentication, role-based access control, and a responsive dashboard for managing fleet operations efficiently.",
+      tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Fastify",
+        "MongoDB",
+        "Microservices",
+        "JWT Authentication",
+        "REST APIs",
+        "Role-Based Access Control",
+      ],
+      image: [
+        "../Images/FleetFlow/fleetflow-Homepage.png",
+        "../Images/FleetFlow/fleetflow-Dashboard.png",
+        "../Images/FleetFlow/fleetflow-Vehicles.png",
+        "../Images/FleetFlow/fleetflow-Drivers.png",
+        "../Images/FleetFlow/fleetflow-Assignments.png",
+        "../Images/FleetFlow/fleetflow-Trips.png",
+        "../Images/FleetFlow/fleetflow-Inspections.png",
+        "../Images/FleetFlow/fleetflow-Maintenance.png",
+        "../Images/FleetFlow/fleetflow-Reports.png",
+      ],
+      demo: "",
+      github: "https://github.com/mubilal349/FleetFlow",
+    },
   ];
 
   return (
@@ -322,6 +355,16 @@ const ProjectCard = ({ project }) => {
                      opacity-70 group-hover:opacity-100
                      transition-all duration-500"
         />
+
+        {/* Coming Soon Badge — top-right */}
+        {project.status === "Coming Soon" && (
+          <div className="absolute top-3 right-3 z-20">
+            <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-black/75 px-3 py-1.5 text-xs font-bold text-amber-300 shadow-lg backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+              Coming Soon
+            </span>
+          </div>
+        )}
 
         {/* Previous Button */}
         {hasMultipleImages && (
