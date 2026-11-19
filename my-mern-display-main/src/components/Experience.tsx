@@ -10,6 +10,9 @@ import {
   Trophy,
   CheckCircle,
   Rocket,
+  Code2,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 
 interface Experience {
@@ -18,29 +21,36 @@ interface Experience {
   position: string;
   location: string;
   duration: string;
-  type: "Full-time" | "Part-time" | "Contract" | "Freelance" | "Internship";
+  type:
+    | "Full-time"
+    | "On-site"
+    | "Part-time"
+    | "Contract"
+    | "Freelance"
+    | "Internship";
   description: string;
   achievements: string[];
   technologies: string[];
   icon: any;
+  certificate?: string;
 }
 
 const Experience = () => {
   const experiences: Experience[] = [
     {
       id: 1,
-      company: "Elite Marketing Technology pvt.ltd,Rawalpindi",
-      position: "Full Stack Developer intern",
+      company: "Elite Marketing Technology Pvt. Ltd., Rawalpindi",
+      position: "Full Stack Developer Intern",
       location: "Rawalpindi, Punjab",
-      duration: "Sep 2025 - December 2025",
+      duration: "Sep 2025 - Dec 2025",
       type: "Full-time",
       description:
-        "Development of scalable websites using MERN stack. Collaborating with cross-functional teams to deliver high-quality software solutions.",
+        "Developed scalable websites using the MERN stack, collaborating with cross-functional teams to deliver software solutions.",
       achievements: [
-        "Increased application performance by 40% through optimization",
-        "Learn git and github along with deployment",
-        "Implemented ChatBot integration with website",
-        "learn web socket and create one chat web app with laravel reverb",
+        "Worked on application performance optimization",
+        "Learned Git, GitHub, and deployment workflows",
+        "Implemented chatbot integration with websites",
+        "Learned WebSockets and built a chat application using Laravel Reverb",
       ],
       technologies: [
         "React",
@@ -58,33 +68,38 @@ const Experience = () => {
       company: "RCMB LLC",
       position: "Web Developer",
       location: "Rawalpindi, Punjab",
-      duration: "December 2025 - Jan 2026",
+      duration: "Dec 2025 - Jan 2026",
       type: "Full-time",
       description:
-        "Developed and maintained the wordpress websites along with google sheets integration",
+        "Developed and maintained WordPress websites with Google Sheets integration.",
       achievements: [
-        "Built 3+ responsive  medical billing website from scratch",
-        "Improved website loading speed by 35%",
-        "Collaborated with design team to implement pixel-perfect UIs",
-        "Integrated Chatbot integration",
+        "Built responsive medical billing websites",
+        "Worked on website performance optimization",
+        "Collaborated with design teams to implement responsive interfaces",
+        "Integrated chatbot functionality",
       ],
-      technologies: ["Wordpress", "Elementor", "Form", "Custom coding theme"],
+      technologies: [
+        "WordPress",
+        "Elementor",
+        "Google Sheets",
+        "Custom Theme Development",
+      ],
       icon: Code,
     },
     {
       id: 3,
       company: "All Medex LLC",
-      position: "Full Stack Developer + Wordpress Developer",
+      position: "Full Stack Developer & WordPress Developer",
       location: "Rawalpindi, Pakistan",
       duration: "Jan 2026 - Apr 2026",
       type: "On-site",
       description:
-        "Worked with multiple websites to build and maintain websites using wordpress and custom coding.",
+        "Built and maintained websites using WordPress and custom development, while contributing to full-stack application development.",
       achievements: [
-        "Delivered 3 MVP applications within tight deadlines",
+        "Delivered MVP applications within project deadlines",
         "Implemented real-time features using Socket.io",
-        "Built secure authentication and authorization systems",
-        "Optimized database queries for better performance",
+        "Built authentication and authorization systems",
+        "Worked on database query optimization",
       ],
       technologies: [
         "MongoDB",
@@ -93,26 +108,48 @@ const Experience = () => {
         "Node.js",
         "Socket.io",
         "JWT",
+        "WordPress",
       ],
       icon: Rocket,
     },
     {
       id: 4,
-      company: "Kamyab Jawan Markaz,Swat",
+      company: "Kamyab Jawan Markaz, Swat",
       position: "Junior Web Developer",
-      location: "Onsite",
+      location: "On-site",
       duration: "Oct 2023 - Apr 2024",
       type: "Internship",
       description:
-        "Started my professional journey as an intern, learning industry best practices and contributing to client projects.",
+        "Started my professional journey as an intern, learning development practices and contributing to projects.",
       achievements: [
         "Successfully completed startup projects",
         "Learned version control and collaborative development",
-        "Gained experience in waterfall development methodologies",
+        "Gained experience with waterfall development methodologies",
         "Received mentorship from senior developers",
       ],
       technologies: ["HTML", "CSS", "JavaScript", "React", "Git", "Figma"],
       icon: Users2,
+    },
+    {
+      id: 5,
+      company: "WebEra Solutions",
+      position: "Front-End Developer Intern",
+      location: "Remote",
+      // Replace this with your actual internship dates.
+      duration: "07 sep 2026 - 10 oct 2026",
+      type: "Internship",
+      description:
+        "Completed a front-end development internship focused on building responsive and interactive web interfaces using HTML, CSS, JavaScript, and React.",
+      achievements: [
+        "Completed front-end development internship training",
+        "Built responsive user interfaces using HTML and CSS",
+        "Implemented interactive functionality using JavaScript",
+        "Developed reusable UI components with React",
+        "Received an internship completion certificate",
+      ],
+      technologies: ["HTML", "CSS", "JavaScript", "React"],
+      icon: Code2,
+      certificate: "/Images/certificates/webera-frontend-certificate.png",
     },
   ];
 
@@ -124,9 +161,11 @@ const Experience = () => {
   ];
 
   const getTypeColor = (type: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       "Full-time":
         "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
+      "On-site":
+        "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
       "Part-time":
         "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300",
       Contract:
@@ -136,37 +175,42 @@ const Experience = () => {
       Internship:
         "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300",
     };
-    return colors[type as keyof typeof colors] || colors["Full-time"];
+
+    return colors[type] || colors["Full-time"];
   };
 
   return (
     <section id="experience" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
+        {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Professional Experience
           </h2>
+
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A journey through my professional development and the impact I've
-            made in various organizations
+            A journey through my professional development and the impact
+            I&apos;ve made in various organizations.
           </p>
         </div>
 
         {/* Experience Timeline */}
         <div className="space-y-8 mb-16">
-          {experiences.map((exp, index) => {
+          {experiences.map((exp) => {
             const Icon = exp.icon;
+
             return (
               <Card
                 key={exp.id}
                 className="p-6 bg-card/50 backdrop-blur border-border/50 hover:shadow-glow transition-all duration-300"
               >
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
-                  {/* Company Info */}
+                  {/* Company Icon and Employment Type */}
                   <div className="flex-shrink-0">
                     <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mb-4">
                       <Icon className="w-8 h-8 text-primary" />
                     </div>
+
                     <div className="space-y-2">
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTypeColor(
@@ -179,28 +223,32 @@ const Experience = () => {
                   </div>
 
                   {/* Experience Details */}
-                  <div className="flex-grow">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                  <div className="flex-grow min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-1">
                           {exp.position}
                         </h3>
+
                         <p className="text-lg font-semibold text-primary mb-2">
                           {exp.company}
                         </p>
                       </div>
+
                       <div className="flex flex-col sm:text-right">
                         <div className="flex items-center text-muted-foreground mb-1">
-                          <Calendar className="w-4 h-4 mr-1" />
+                          <Calendar className="w-4 h-4 mr-1 flex-shrink-0" />
                           <span className="text-sm">{exp.duration}</span>
                         </div>
+
                         <div className="flex items-center text-muted-foreground">
-                          <MapPin className="w-4 h-4 mr-1" />
+                          <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
                           <span className="text-sm">{exp.location}</span>
                         </div>
                       </div>
                     </div>
 
+                    {/* Description */}
                     <p className="text-muted-foreground mb-4">
                       {exp.description}
                     </p>
@@ -211,6 +259,7 @@ const Experience = () => {
                         <Trophy className="w-4 h-4 mr-2 text-primary" />
                         Key Achievements
                       </h4>
+
                       <ul className="space-y-1">
                         {exp.achievements.map((achievement, idx) => (
                           <li
@@ -218,7 +267,7 @@ const Experience = () => {
                             className="flex items-start text-sm text-muted-foreground"
                           >
                             <CheckCircle className="w-4 h-4 mr-2 text-green-500 mt-0.5 flex-shrink-0" />
-                            {achievement}
+                            <span>{achievement}</span>
                           </li>
                         ))}
                       </ul>
@@ -229,6 +278,7 @@ const Experience = () => {
                       <h4 className="font-semibold text-foreground mb-2">
                         Technologies Used
                       </h4>
+
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, idx) => (
                           <span
@@ -240,6 +290,28 @@ const Experience = () => {
                         ))}
                       </div>
                     </div>
+
+                    {/* Internship Certificate */}
+                    {exp.certificate && (
+                      <div className="mt-6 border-t border-border/50 pt-5">
+                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <FileText className="w-5 h-5 text-primary" />
+                          Internship Certificate
+                        </h4>
+
+                        {/* View Certificate Button */}
+                        <a
+                          href={exp.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 mt-4 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+                        >
+                          <FileText className="w-4 h-4" />
+                          View Certificate
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>
@@ -253,27 +325,31 @@ const Experience = () => {
             <h3 className="text-2xl font-bold mb-6 text-center text-foreground">
               Core Competencies
             </h3>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skills.map((skill, index) => {
-                const Icon = skill.icon;
+                const SkillIcon = skill.icon;
+
                 return (
                   <div key={index} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <Icon className="w-5 h-5 text-primary mr-2" />
+                        <SkillIcon className="w-5 h-5 text-primary mr-2" />
                         <span className="font-medium text-foreground">
                           {skill.name}
                         </span>
                       </div>
+
                       <span className="text-sm text-muted-foreground">
                         {skill.level}%
                       </span>
                     </div>
+
                     <div className="w-full bg-muted rounded-full h-2">
                       <div
                         className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${skill.level}%` }}
-                      ></div>
+                      />
                     </div>
                   </div>
                 );
@@ -288,19 +364,23 @@ const Experience = () => {
             <h3 className="text-xl font-bold mb-6 text-center text-foreground">
               Experience Summary
             </h3>
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">2+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </div>
+
               <div>
-                <div className="text-3xl font-bold text-secondary mb-2">4</div>
-                <div className="text-muted-foreground">Companies</div>
+                <div className="text-3xl font-bold text-secondary mb-2">5</div>
+                <div className="text-muted-foreground">Organizations</div>
               </div>
+
               <div>
                 <div className="text-3xl font-bold text-terminal mb-2">50+</div>
                 <div className="text-muted-foreground">Projects Delivered</div>
               </div>
+
               <div>
                 <div className="text-3xl font-bold text-primary mb-2">15+</div>
                 <div className="text-muted-foreground">
