@@ -1,0 +1,84 @@
+/* Theme toggle styles only.
+   Colors come from the tokens defined in index.css. */
+
+body {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* ---------- Sticky right-side toggle ---------- */
+button.theme-toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  width: 44px;
+
+  background: hsl(var(--card));
+  color: hsl(var(--muted-foreground));
+  border: 1px solid hsl(var(--border));
+  border-right: none;
+  border-radius: 22px 0 0 22px;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+button.theme-toggle:hover {
+  border-color: hsl(var(--border));
+}
+
+.theme-toggle__icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle__icon[data-active="true"] {
+  color: hsl(var(--primary-foreground));
+}
+
+/* Sliding thumb: sun (top) in light mode, moon (bottom) in dark mode */
+.theme-toggle__thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  transition: transform 0.25s ease;
+}
+
+/* Dark is the default, so the thumb sits on the moon unless light is set */
+:root:not([data-theme="light"]) .theme-toggle__thumb {
+  transform: translateY(40px); /* icon height (36px) + gap (4px) */
+}
+
+button.theme-toggle:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .theme-toggle,
+  .theme-toggle__icon,
+  .theme-toggle__thumb {
+    transition: none;
+  }
+}

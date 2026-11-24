@@ -7,8 +7,9 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* ---------- DARK THEME (default) ---------- */
   :root {
-    /* Core colors - Dark theme by default */
+    /* Core colors */
     --background: 222 47% 4%;
     --foreground: 210 40% 98%;
 
@@ -43,22 +44,30 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(186 100% 50%), hsl(281 100% 60%));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(186 100% 50%),
+      hsl(281 100% 60%)
+    );
     --gradient-dark: linear-gradient(180deg, hsl(222 47% 7%), hsl(222 47% 4%));
-    --gradient-glow: linear-gradient(135deg, hsl(186 100% 50% / 0.3), hsl(281 100% 60% / 0.3));
-    
+    --gradient-glow: linear-gradient(
+      135deg,
+      hsl(186 100% 50% / 0.3),
+      hsl(281 100% 60% / 0.3)
+    );
+
     /* Terminal green accent */
     --terminal: 120 100% 50%;
-    
+
     /* MongoDB green */
     --mongodb: 120 60% 40%;
-    
+
     /* Express gray */
     --express: 0 0% 20%;
-    
+
     /* React blue */
     --react: 193 95% 68%;
-    
+
     /* Node green */
     --node: 120 60% 45%;
 
@@ -70,6 +79,60 @@ All colors MUST be HSL.
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* ---------- LIGHT THEME (overrides) ---------- */
+  :root[data-theme="light"] {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 186 100% 33%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 186 100% 45%;
+
+    --secondary: 281 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 186 100% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 186 100% 33%;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(186 100% 33%),
+      hsl(281 80% 50%)
+    );
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 97%));
+    --gradient-glow: linear-gradient(
+      135deg,
+      hsl(186 100% 33% / 0.15),
+      hsl(281 80% 50% / 0.15)
+    );
+
+    --terminal: 120 100% 30%;
+    --mongodb: 120 60% 32%;
+    --express: 0 0% 30%;
+    --react: 193 95% 40%;
+    --node: 120 60% 34%;
+
+    --shadow-glow: 0 0 40px hsl(186 100% 33% / 0.15);
+    --shadow-neon: 0 0 20px hsl(281 80% 50% / 0.2);
+    --shadow-card: 0 10px 40px -10px hsl(222 47% 11% / 0.15);
   }
 }
 
